@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+
+    <style>
+
+      body {
+        background: #4CAF50;
+        font-family: 'Rubik Moonrocks', cursive;
+      }
+
+      .btn {
+        height: 60px;
+        border-radius: 15px;
+        margin: 3px;
+        border: 2px solid black
+
+      }
+
+      #pantalla {
+        height: 30px;
+        width: 100%;
+        border: 2px solid black;
+        outline: #4CAF50 solid 10px;
+      }
+
+}
+
+    </style>
+
+    <title>Drum machine</title>
+
+    <!-- Keyboard sounds -->
+    <script src="./JS/keyboard.js"></script>
+    <script src="./JS/changeColor.js"></script>
+    <script src="./JS/normalColor.js"></script>
+
+
+
+  </head>
+  <body>
+
+
+    <div class="container-xxl" id="drum-machine" style="width: 600px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+      <div id="display">
+
+        <!-- Tarjeta -->
+
+        <div class="card text-center" style="border: 2px solid black;" id="tarjeta">
+  <div class="card-header" style="border-bottom: 2px solid black;" id="bordeBarra">
+    <div class="row">
+    <div class="col" style="display: table;">
+
+      <i class="fa-solid fa-drum fa-bounce fa-2xl" style="display: table-cell;
+    vertical-align: middle;color: #4CAF50;animation-duration: 3s;animation-iteration-count: 1" id="icono1"></i>
+    </div>
+    <div class="col" style="border: 2px solid black;" id="texto">My very first Drum machine</div>
+    <div class="col" style="display: table;">
+      <i class="fa-solid fa-music fa-shake fa-2xl" style="display: table-cell;
+    vertical-align: middle;color: #4CAF50;animation-duration: 3s;animation-iteration-count: 1" id="icono2"></i>
+    </div>
+</div>
+  </div>
+  <div class="card-body" style="height: 230px">
+    <div class="row" style="height: 100%">
+      <div class="col">
+        <div class="row">
+          <button id="drum pad 1" class="drum-pad col btn btn-danger" onclick="playAud()" name="danger">
+            <audio src="./Audio/Cev_H2.mp3" class="clip" id="Q" preload="auto" name="Cev H2"></audio>
+            <script src="./JS/Q.js"></script>Q
+
+          </button>&nbsp
+
+          <button id="drum pad 2" class="drum-pad col btn btn-warning" onclick="playW()">
+            <audio src="./Audio/Dsc_Oh.mp3" class="clip" id="W" name="Dsc Oh"></audio>
+            <script src="./JS/W.js"></script>W
+          </button>&nbsp
+
+          <button id="drum pad 3" class="drum-pad col btn btn-success" onclick="playE()">
+            <audio src="./Audio/Heater-1.mp3" class="clip" id="E" name="Heater 1"></audio>
+            <script src="./JS/E.js"></script>E
+          </button>
+
+        </div>
+        <div class="row">
+          <button id="drum pad 4" class="drum-pad col btn btn-warning" onclick="playA()">
+            <audio src="./Audio/Heater-2.mp3" class="clip" id="A" name="Heater 2"></audio>
+            <script src="./JS/A.js"></script>A
+          </button>&nbsp
+
+
+          <button id="drum pad 5" class="drum-pad col btn btn-success" onclick="playS()" name="Heater 3">
+            <audio src="./Audio/Heater-3.mp3" class="clip" id="S" name="Heater 3"></audio>
+            <script src="./JS/S.js"></script>S
+          </button>&nbsp
+
+          <button id="drum pad 6" class="drum-pad col btn btn-danger" onclick="playD()" name="danger">
+            <audio src="./Audio/Heater-4_1.mp3" class="clip" id="D" name="Heater 4"></audio>
+            <script src="./JS/D.js"></script>D
+          </button>
+
+        </div>
+        <div class="row">
+          <button id="drum pad 7" class="drum-pad col btn btn-success" onclick="playZ()">
+            <audio src="./Audio/Heater-6.mp3" class="clip" id="Z" name="Heater 6"></audio>
+            <script src="./JS/Z.js"></script>Z
+          </button>&nbsp
+
+          <button id="drum pad 8" class="drum-pad col btn btn-danger" onclick="playX()">
+            <audio src="./Audio/Kick_n_Hat.mp3" class="clip" id="X" name="Hat"></audio>
+            <script src="./JS/X.js"></script>X
+          </button>&nbsp
+
+          <button id="drum pad 9" class="drum-pad col btn btn-warning" onclick="playC()">
+            <audio src="./Audio/RP4_KICK_1.mp3" class="clip" id="C" name="RP4 Kick"></audio>
+            <script src="./JS/C.js"></script>C
+          </button>
+        </div>
+
+
+      </div>
+      <div class="col">&nbsp&nbsp
+        <div class="volume" style="height: 50px">
+
+
+
+
+        </div>
+        <div id="pantalla" class="text-center">
+
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+
+        <div class="icon">
+          <div class="container" style="margin-left: 95px">
+
+
+          <a href="#"><i class="fa-solid fa-moon fa-xl" id="moon" onclick="chBackcolor();" style="color: black"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#"><i class="fa-solid fa-sun fa-xl" id="sun" onclick="normalColor();" style="color: black"></i></a>
+          </div>
+
+        </div>&nbsp;&nbsp
+        <div class="signature" style="margin-top: 10px; margin-left:150px">
+          by RobMarin
+        </div>
+        </div>
+    </div>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+      </div>
+
+    </div>
+
+    <!-- Tester -->
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
